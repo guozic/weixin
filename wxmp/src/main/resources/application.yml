@@ -1,0 +1,46 @@
+logging:
+  level:
+    org.springframework.web: DEBUG
+    com.github.binarywang.demo.wx.mp: DEBUG
+
+wechat:
+  mp:
+#  未认证订阅号
+#    appId: wx4cc8079016ace2ea
+#    secret: f87fcd3c98b2d26d0939a3d3dbbe7625
+#    token: guozicheng
+#    aesKey: fWND0xntGy5HlU2brQaoWMPUZ2J6uWHZcZTujmTbdE8
+
+#测试账号
+      appId: wx03d9648d667f6c07
+      secret: 5b0ec15713894d5422aee279380c4386
+      token: guozicheng
+      aesKey:
+
+#微信配置的访问域名---注意网页授权回调请求中的域名配置
+secure.host: http://79tcei.natappfree.cc
+
+server:
+  port: 80
+
+spring:
+  mvc:
+    view:
+      prefix: ../templates/
+      suffix: .html
+
+  session:
+    store-type: REDIS
+    redis:
+      namespace: weixinmp
+
+  redis:
+    host: localhost
+    password:
+    port: 6379
+    pool:
+      max-active: 8
+      max-idle: 8
+      max-wait: 60000
+
+
